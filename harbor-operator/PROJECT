@@ -1,0 +1,13 @@
+domain: tim.local
+layout: go.kubebuilder.io/v3
+projectName: harbor-operator
+repo: github.com/chaospuppy/harbor-operator
+resources:
+- crdVersion: v1
+  group: test
+  kind: Harbor
+  version: v1alpha1
+version: 3-alpha
+plugins:
+  manifests.sdk.operatorframework.io/v2: {}
+  scorecard.sdk.operatorframework.io/v2: {}
