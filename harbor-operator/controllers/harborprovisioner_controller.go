@@ -50,8 +50,6 @@ type HarborProvisionerReconciler struct {
 func (r *HarborProvisionerReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
 	_ = r.Log.WithValues("harborprovisioner", req.NamespacedName)
 
-	// your logic here
-
 	return ctrl.Result{}, nil
 }
 

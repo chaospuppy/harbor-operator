@@ -29,15 +29,12 @@ type HarborProvisionerSpec struct {
 	// Important: Run "make" to regenerate code after modifying this file
 
 	// Foo is an example field of HarborProvisioner. Edit HarborProvisioner_types.go to remove/update
-
 	Aws    HarborProvisionerAwsSpec    `json:"aws,omitempty"`
 	Harbor HarborProvisionerHarborSpec `json:"harbor,omitempty"`
 }
-
 type HarborProvisionerAwsSpec struct {
 	Region string `json:"region,omitempty"`
 }
-
 type HarborProvisionerHarborSpec struct {
 	Url                       string                        `json:"url,omitempty"`
 	ProjectsEndpint           string                        `json:"projectsEndpoint,omitempty"`
@@ -51,7 +48,7 @@ type HarborProvisionerHarborSpec struct {
 	HarborProjects            []HarborProjectsSpec          `json:"projects,omitempty"`
 	Robots                    []HarborRobotSpec             `json:"robots,omitempty"`
 	RetentionPolicies         []HarborRetentionPoliciesSpec `json:"retentionPolicies,omitempty"`
-	Oidc                      []HarborOidcSpec              `json:"oidc,omitempty"`
+	Oidc                      []HarborOidcSpec              `json:oidc,omitempty`
 }
 
 type HarborOidcSpec struct {
@@ -70,6 +67,10 @@ type HarborRetentionPoliciesSpec struct {
 	Scope     HarborRetentionPoliciesScopeSpec   `json:"scope,omitempty"`
 }
 
+type HarborRetentionPoliciesScopeSpec struct {
+	Trigger HarborRetentionPoliciesScopeTriggerSpec `json:"trigger,omitempty"`
+}
+
 type HarborRetentionPoliciesScopeTriggerSpec struct {
 	Kind     string                                          `json:"kind,omitempty"`
 	Settings HarborRetentionPoliciesScopeTriggerSettingsSpec `json:"settings,omitempty"`
@@ -83,7 +84,6 @@ type HarborRetentionPoliciesScopeSpec struct {
 	Level string `json:"level,omitempty"`
 	Ref   string `json:"ref,omitempty"`
 }
-
 type HarborRetentionPoliciesRulesSpec struct {
 	Action         string                                     `json:"action,omitempty"`
 	ScopeSelectors HarborRetentionPoliciesRulesScopeSelectors `json:"scopeSelectors,omitempty"`
